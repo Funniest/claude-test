@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 todo.py)",
+      "Bash(python3 /Users/funny/claude/todo.py)",
+      "Bash(python3 -m unittest test_todo*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Read(.env)",
+      "Write(.env)",
+      "Edit(.env)",
+      "Bash(rm *tasks.json*)"
+    ]
+  }
+}
