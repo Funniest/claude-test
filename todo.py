@@ -28,6 +28,14 @@ def delete_task(tasks: list[Task], index: int) -> Task:
     return tasks.pop(index - 1)
 
 
+def complete_task(tasks: list[Task], index: int) -> Task:
+    """index 번호(1부터 시작)에 해당하는 할일을 완료 처리하고 해당 Task를 반환한다."""
+    if index < 1 or index > len(tasks):
+        raise IndexError(f"유효하지 않은 번호입니다: {index}")
+    tasks[index - 1].done = True
+    return tasks[index - 1]
+
+
 def save_tasks(tasks: list[Task], filename: str = "tasks.json") -> None:
     """할일 목록을 JSON 파일로 저장한다."""
     with open(filename, "w", encoding="utf-8") as f:
